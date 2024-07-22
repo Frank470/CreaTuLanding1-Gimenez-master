@@ -1,0 +1,39 @@
+.item-count {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .item-count button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .item-count button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  .item-count span {
+    font-size: 16px;
+    margin: 0 10px;
+    display: inline-block;
+    min-width: 40px;
+    text-align: center;
+  }
+  
+  .item-count .add-to-cart-button {
+    background-color: #28a745;
+  }
+  
+  .item-count .add-to-cart-button:hover {
+    background-color: #218838;
+  }
+  
