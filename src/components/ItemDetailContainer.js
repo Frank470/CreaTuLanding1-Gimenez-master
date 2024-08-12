@@ -1,23 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { doc, getDoc } from "firebase/firestore";
 import './ItemDetailContainer.css';
-
-// Simulación de productos
-const fetchProduct = (id) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      const allProducts = [
-        { id: 1, name: 'Laptop', description: 'Laptop moderna', price: 999, imageUrl: 'https://via.placeholder.com/150', category: 'electronics' },
-        { id: 2, name: 'T-Shirt', description: 'Camiseta cómoda', price: 19, imageUrl: 'https://via.placeholder.com/150', category: 'clothing' },
-        { id: 3, name: 'Sofa', description: 'Sofa elegante', price: 499, imageUrl: 'https://via.placeholder.com/150', category: 'home' },
-        { id: 4, name: 'Smartphone', description: 'Teléfono inteligente', price: 699, imageUrl: 'https://via.placeholder.com/150', category: 'electronics' },
-        { id: 5, name: 'Table', description: 'Mesa de comedor', price: 149, imageUrl: 'https://via.placeholder.com/150', category: 'home' },
-        { id: 6, name: 'Jacket', description: 'Chaqueta de invierno', price: 89, imageUrl: 'https://via.placeholder.com/150', category: 'clothing' }
-      ];
-      resolve(allProducts.find(product => product.id === parseInt(id)));
-    }, 1000);
-  });
-};
+import db from '../firebase';
 
 const ItemDetailContainer = ({ addToCart }) => {
   const [product, setProduct] = useState(null);
@@ -25,11 +10,19 @@ const ItemDetailContainer = ({ addToCart }) => {
   const { itemId } = useParams();
 
   useEffect(() => {
-    setLoading(true);
-    fetchProduct(itemId).then((data) => {
-      setProduct(data);
+    const getProduct = async () => {
+      const productRef = doc(db, "products", itemId);
+      const productSnap = await getDoc(productRef);
+
+      if (productSnap.exists()) {
+        setProduct({ id: productSnap.id, ...productSnap.data() });
+      } else {
+        console.log("No such product!");
+      }
       setLoading(false);
-    });
+    };
+
+    getProduct();
   }, [itemId]);
 
   if (loading) {

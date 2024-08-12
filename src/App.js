@@ -8,7 +8,7 @@ import NavBar from './components/NavBar';
 
 const App = () => {
   const [cart, setCart] = useState([]);
-  
+
   const addToCart = (product) => {
     setCart((prevCart) => [...prevCart, product]);
   };

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './ItemCount.css';
+import db from '/firebase';  
 
 const ItemCount = () => {
   const [count, setCount] = useState(1);

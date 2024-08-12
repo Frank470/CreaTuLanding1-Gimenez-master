@@ -1,95 +1,59 @@
-/* Checkout.css */
 .checkout-container {
-    padding: 20px;
-    max-width: 800px;
-    margin: auto;
-    font-family: Arial, sans-serif;
-  }
-  
-  h2 {
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .checkout-details {
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-  }
-  
-  .checkout-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .checkout-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    padding: 10px;
-    border-bottom: 1px solid #eee;
-  }
-  
-  .checkout-image {
-    width: 100px;
-    height: auto;
-    margin-right: 15px;
-    border-radius: 8px;
-  }
-  
-  .checkout-info {
-    flex: 1;
-  }
-  
-  .checkout-name {
-    margin: 0;
-    font-size: 1.2em;
-    color: #333;
-  }
-  
-  .checkout-description {
-    margin: 5px 0;
-    color: #666;
-  }
-  
-  .checkout-price {
-    font-size: 1.1em;
-    color: #e53935;
-  }
-  
-  .checkout-summary {
-    margin-top: 20px;
-    text-align: right;
-  }
-  
-  .clear-cart-button,
-  .checkout-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    margin-left: 10px;
-    transition: background-color 0.3s;
-  }
-  
-  .clear-cart-button:hover,
-  .checkout-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .home-link {
-    display: inline-block;
-    margin-top: 20px;
-    color: #007bff;
-    text-decoration: none;
-  }
-  
-  .home-link:hover {
-    text-decoration: underline;
-  }
-  
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.empty-cart {
+  font-size: 1.2em;
+}
+
+.cart-items-list {
+  list-style: none;
+  padding: 0;
+}
+
+.cart-item {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.total {
+  font-size: 1.5em;
+  margin: 20px 0;
+}
+
+.checkout-button,
+.clear-cart-button {
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.checkout-button {
+  background-color: #28a745;
+  color: white;
+}
+
+.clear-cart-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.back-to-products-button {
+  display: inline-block;
+  margin-top: 20px;
+  color: #007bff;
+  text-decoration: none;
+  font-size: 1em;
+}
+
+.back-to-products-button:hover {
+  text-decoration: underline;
+}
